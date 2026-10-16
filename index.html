@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111832" />
+    <meta name="description" content="一个关于城市气质与心动节奏的原创趣味匹配测试。" />
+    <title>城里遇见你｜城市 CP 匹配测试</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" data-action="home" aria-label="返回首页">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>城里遇见你</span>
+        </button>
+        <div class="topbar-note"><span class="live-dot"></span> 今天也在寻找同频的人</div>
+      </header>
+
+      <main>
+        <section class="screen active" id="home-screen" aria-labelledby="home-title">
+          <div class="home-grid">
+            <div class="home-copy">
+              <p class="eyebrow"><span>URBAN MATCH LAB</span><span class="eyebrow-line"></span></p>
+              <h1 id="home-title">你的城市，<br /><em>住着哪一种心动？</em></h1>
+              <p class="home-intro">8 道直觉小题，测出你的城市人格，<br />再把你投递给一座刚好懂你的城。</p>
+              <div class="home-actions">
+                <button class="primary-button" data-action="start">开始匹配 <span aria-hidden="true">↗</span></button>
+                <p class="microcopy">约 1 分钟 · 不需要注册 · 结果仅供开心</p>
+              </div>
+              <div class="tiny-stats" aria-label="测试特点">
+                <span><strong>08</strong> 道直觉题</span>
+                <span><strong>05</strong> 种城市人格</span>
+                <span><strong>01</strong> 张专属匹配卡</span>
+              </div>
+            </div>
+
+            <div class="city-orbit" aria-label="城市轨道装饰图" role="img">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="orbit orbit-three"></div>
+              <div class="orbit-core"><span>你</span><small>IN THE CITY</small></div>
+              <span class="city-pin pin-shanghai">SH</span>
+              <span class="city-pin pin-chengdu">CD</span>
+              <span class="city-pin pin-xiamen">XM</span>
+              <span class="city-pin pin-shenzhen">SZ</span>
+              <span class="city-pin pin-nanjing">NJ</span>
+              <span class="route route-a"></span><span class="route route-b"></span>
+              <div class="orbit-caption">your vibe<br /><b>has a postcode</b></div>
+            </div>
+          </div>
+          <div class="home-footer"><span>一个轻轻的性格实验</span><span>scroll to begin <b>↓</b></span></div>
+        </section>
+
+        <section class="screen quiz-screen" id="quiz-screen" aria-labelledby="question-title" hidden>
+          <div class="quiz-frame">
+            <div class="quiz-head">
+              <button class="text-button" data-action="home">← 回到首页</button>
+              <div class="progress-wrap" aria-label="答题进度">
+                <div class="progress-label"><span id="progress-label">01 / 08</span><span id="progress-percent">12%</span></div>
+                <div class="progress-track"><div id="progress-bar"></div></div>
+              </div>
+              <span class="quiz-code">CML-08</span>
+            </div>
+            <div class="question-area">
+              <p class="question-kicker" id="question-kicker">Q1 · 第一眼印象</p>
+              <h2 id="question-title">周五下班，你会把自己交给哪一种夜晚？</h2>
+              <p class="question-hint">凭第一反应选，不要替未来的自己做决定。</p>
+              <div class="answer-grid" id="answer-grid"></div>
+            </div>
+            <div class="quiz-bottom"><span class="keyboard-hint">Tap your instinct</span><button class="text-button" id="prev-button" data-action="prev" disabled>上一题</button></div>
+          </div>
+        </section>
+
+        <section class="screen result-screen" id="result-screen" aria-labelledby="result-title" hidden>
+          <div class="result-wrap">
+            <div class="result-topline"><button class="text-button" data-action="home">← 再看一次</button><span>YOUR CITY MATCH</span><button class="text-button" data-action="share">分享结果 ↗</button></div>
+            <div class="result-card" id="result-card">
+              <div class="result-map" id="result-map" aria-hidden="true"></div>
+              <div class="result-card-content">
+                <p class="result-kicker">你的城市人格是</p>
+                <h1 id="result-title">夜游诗人</h1>
+                <p class="result-tagline" id="result-tagline">把普通日子过成一场小型展览。</p>
+                <div class="city-pair"><div><span class="label">主场城市</span><strong id="result-city">上海</strong><small id="result-city-note">霓虹、深夜与灵感不打烊</small></div><span class="pair-symbol">×</span><div><span class="label">心动 CP</span><strong id="result-match">成都</strong><small id="result-match-note">慢一点，刚好接住你的热闹</small></div></div>
+                <div class="result-divider"></div>
+                <div class="result-stats"><div><span>心动指数</span><strong id="result-score">92<span>%</span></strong></div><div><span>相处节奏</span><strong id="result-pace">夜行型</strong></div><div><span>适配场景</span><strong id="result-scene">散步看展</strong></div></div>
+              </div>
+              <div class="result-stamp">CITY<br /><b>CP</b><br />MATCHED</div>
+            </div>
+            <div class="result-actions"><button class="primary-button" data-action="share">复制我的结果 <span>↗</span></button><button class="secondary-button" data-action="restart">重新测试</button></div>
+            <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
+            <div class="other-cities"><div class="section-heading"><div><span class="eyebrow">05 CITY TYPES</span><h2>还有这些城市，在等你路过</h2></div><span>每一次选择，都会偏向不同的你</span></div><div class="city-list" id="city-list"></div></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer"><span>© 2026 城里遇见你</span><span>Made for a little city daydream</span></footer>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
